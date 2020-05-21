@@ -9,15 +9,21 @@
 
     <Button
         android:id="@+id/buttonPassInteger"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
         android:text="@string/pass_integer_value_to_2nd_activity" />
 
     <Button
         android:id="@+id/buttonPassChar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/pass_character_value_to_2nd_activity" />
+
+    <TextView
+        android:id="@+id/textViewPassDouble"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="@string/pass_character_value_to_2nd_activity" />
+        android:layout_gravity="center"
+        android:text="@string/pass_double_value_to_2nd_activity" />
+
 </LinearLayout>

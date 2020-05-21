@@ -7,10 +7,12 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
     Button btnPassInteger, btnPassChar;
+    TextView tv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
         btnPassInteger = findViewById(R.id.buttonPassInteger);
         btnPassChar = findViewById(R.id.buttonPassChar);
+        tv = findViewById(R.id.textViewPassDouble);
 
         btnPassInteger.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -37,38 +40,15 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(in);
             }
         });
-    }
 
-    @Override
-    protected void onStart() {
-        Log.d("MainActivity", "onStart() called.");
-        super.onStart();
+        tv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, FourthActivity.class);
+                intent.putExtra("value", 99.99);
+                startActivity(intent);
+            }
+        });
     }
-    @Override
-    protected void onResume() {
-        Log.d("MainActivity", "onResume() called.");
-        super.onResume();
-    }
-    @Override
-    protected void onPause() {
-        Log.d("MainActivity", "onPause() called.");
-        super.onPause();
-    }
-    @Override
-    protected void onStop() {
-        Log.d("MainActivity", "onStop() called.");
-        super.onStop();
-    }
-    @Override
-    protected void onDestroy() {
-        Log.d("MainActivity", "onDestroy() called.");
-        super.onDestroy();
-    }
-    @Override
-    protected void onRestart() {
-        Log.d("MainActivity", "onRestart() called.");
-        super.onRestart();
-    }
-
 
 }
